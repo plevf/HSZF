@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using _1.het_delegaltak.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _1.het_delegaltak
 {
@@ -6,6 +7,7 @@ namespace _1.het_delegaltak
     {
         static void Main(string[] args)
         {
+            #region 1. rész
             Console.WriteLine("Hello, World!");
 
             void HungarianGreeter(string name)
@@ -87,8 +89,22 @@ namespace _1.het_delegaltak
             {
                 Console.WriteLine(item);
             }
+            #endregion
 
-        }
+            /*
+             Készíts el egy generikus tároló osztályt, ami a háttérben egy tömbbe menti a T típusú elemeket! Készíts el egy bejárást indító függvényt, amely végiglépked az elemeken és egy külső függvényt meghív delegáltton keresztül! Legyen lehetőség transzformációs függvények hozzáadására is, amelyeket a bejáráskor meghív egymás után az osztály, de az eredeti elemet nem módosítja
+            */
+
+            void WriteOut(string item)
+            {
+                Console.WriteLine("--- " + item + " ---");
+            }
+
+            Storage<string> stringStorage = new Storage<string>(2);
+            stringStorage.Add("Hello");
+            stringStorage.Add("World");
+            stringStorage.Traverse(WriteOut);
+        }   
 
         delegate void Greeter(string name);
 
