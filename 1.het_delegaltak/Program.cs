@@ -1,4 +1,5 @@
 ﻿using _1.het_delegaltak.Models;
+using System.Dynamic;
 using System.Security.Cryptography.X509Certificates;
 
 namespace _1.het_delegaltak
@@ -90,7 +91,7 @@ namespace _1.het_delegaltak
                 Console.WriteLine(item);
             }
             #endregion
-
+            #region 2. rész
             /*
              Készíts el egy generikus tároló osztályt, ami a háttérben egy tömbbe menti a T típusú elemeket! Készíts el egy bejárást indító függvényt, amely végiglépked az elemeken és egy külső függvényt meghív delegáltton keresztül! Legyen lehetőség transzformációs függvények hozzáadására is, amelyeket a bejáráskor meghív egymás után az osztály, de az eredeti elemet nem módosítja
             */
@@ -116,7 +117,116 @@ namespace _1.het_delegaltak
             stringStorage.AddTransformer(Upper);
             stringStorage.AddTransformer(Format);
             stringStorage.Traverse(WriteOut);
-        }   
+            #endregion
+            #region Func
+            Func<int, int, double> func;
+
+            double Divide(int a, int b)
+            {
+                return (double)a / b;
+            }
+            func = Divide;
+            Console.WriteLine(func?.Invoke(10, 3));
+
+            string Lower(string item)
+            {
+                return item.ToLower();
+            }
+            Func<string, string> func2 = Lower;
+            string res = "TEST";
+            res = func2?.Invoke(res);
+            //res = func2(res);
+            Console.WriteLine(res);
+            #endregion
+            #region 3. rész
+            List<Person> people = new List<Person>
+        {
+            new Person("Alice", 30, "Engineer"),
+            new Person("Bob", 25, "Designer"),
+            new Person("Charlie", 35, "Teacher")
+        };
+
+            bool YoungerThan30(Person p) => p.Age < 30;
+
+            List<Person> youngPeople = people.FindAll(YoungerThan30);
+            foreach (var person in youngPeople)
+            {
+                Console.WriteLine($"{person.Name}, {person.Age}, {person.Job}");
+            }
+
+            int cmp = people[0].CompareTo(people[1]);
+            Console.WriteLine(cmp);
+
+            DateTime[] dates =
+            {
+                DateTime.Parse("2022.10.23 12:34:23"),
+                DateTime.Parse("2021.02.11 08:10:53"),
+                DateTime.Parse("2023.05.27 22:31:37"),
+                DateTime.Parse("2020.01.02 10:00:01"),
+                DateTime.Parse("2021.12.24 18:20:30")
+
+            };
+            Array.Sort(dates, DateComparer);
+
+            int DateComparer(DateTime x, DateTime y)
+            {
+                return x.Second.CompareTo(y.Second);
+            }
+            foreach (var date in dates)
+            {
+                Console.WriteLine(date);
+            }
+            #endregion
+            #region 4. rész
+            List<Person> youngWorkers = people.FindAll(delegate (Person p)
+            {
+                return p.Age < 30;
+            });
+            //ua.:
+            List<Person> youngWorkersLambda = people.FindAll(p => p.Age < 30);
+            Person[] people2 = new Person[]
+            {
+                new Person("Béla", 32, "Lawyer"),
+                new Person("Cecil", 24, "Artist")
+            };
+            //--------------------
+            Array.Sort(people2, (a, b) => a.Age.CompareTo(b.Age));
+            //ua.:
+            Array.Sort(people2, delegate (Person a, Person b)
+            {
+                if (a.Age * a.Name.Length < b.Age * b.Name.Length)
+                {
+                    return -1;
+                }
+                else if (a.Age * a.Name.Length > b.Age * b.Name.Length)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            });
+
+            //A 3 kozul ez tunik a legolvashatobbnak
+            Array.Sort(people2, (a, b) =>
+            {
+                if (a.Age * a.Name.Length < b.Age * b.Name.Length)
+                {
+                    return -1;
+                }
+                else if (a.Age * a.Name.Length > b.Age * b.Name.Length)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            });
+
+            #endregion
+        }
 
         delegate void Greeter(string name);
 
