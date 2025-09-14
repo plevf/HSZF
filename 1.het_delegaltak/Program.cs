@@ -97,12 +97,24 @@ namespace _1.het_delegaltak
 
             void WriteOut(string item)
             {
-                Console.WriteLine("--- " + item + " ---");
+                Console.WriteLine(item);
+            }
+
+            string Upper(string item)
+            {
+                return item.ToUpper();
+            }
+
+            string Format(string item)
+            {
+                return $"*** {item} ***";
             }
 
             Storage<string> stringStorage = new Storage<string>(2);
             stringStorage.Add("Hello");
             stringStorage.Add("World");
+            stringStorage.AddTransformer(Upper);
+            stringStorage.AddTransformer(Format);
             stringStorage.Traverse(WriteOut);
         }   
 
