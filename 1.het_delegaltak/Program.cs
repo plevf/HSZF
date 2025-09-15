@@ -96,17 +96,17 @@ namespace _1.het_delegaltak
              Készíts el egy generikus tároló osztályt, ami a háttérben egy tömbbe menti a T típusú elemeket! Készíts el egy bejárást indító függvényt, amely végiglépked az elemeken és egy külső függvényt meghív delegáltton keresztül! Legyen lehetőség transzformációs függvények hozzáadására is, amelyeket a bejáráskor meghív egymás után az osztály, de az eredeti elemet nem módosítja
             */
 
-            void WriteOut(string item)
+            void WriteOut(string item) //felesleges
             {
                 Console.WriteLine(item);
             }
 
-            string Upper(string item)
+            string Upper(string item) //felesleges
             {
                 return item.ToUpper();
             }
 
-            string Format(string item)
+            string Format(string item) //felesleges
             {
                 return $"*** {item} ***";
             }
@@ -114,9 +114,9 @@ namespace _1.het_delegaltak
             Storage<string> stringStorage = new Storage<string>(2);
             stringStorage.Add("Hello");
             stringStorage.Add("World");
-            stringStorage.AddTransformer(Upper);
+            stringStorage.AddTransformer(t => t.ToUpper());
             stringStorage.AddTransformer(Format);
-            stringStorage.Traverse(WriteOut);
+            stringStorage.Traverse(t => Console.WriteLine(t));
             #endregion
             #region Func
             Func<int, int, double> func;
@@ -224,6 +224,22 @@ namespace _1.het_delegaltak
                     return 0;
                 }
             });
+
+            Action numWriter = null; // ez nem jo, mert eloszor lefut a ciklus, es csak utana hivodik meg a delegalt, igy mindenhol 10-et ir ki
+            for (int i = 0; i < 10; i++)
+            {
+                numWriter += () => { Console.WriteLine(i); };
+            }
+            numWriter();
+
+            //ez mar jo, mert minden iteracioban elmenti az aktuális i értéket egy k változóba, és azt használja a lambda kifejezésben
+            Action szamkiiro = null;
+            for (int i = 0; i < 10; i++)
+            {
+                int k = i;
+                szamkiiro += () => { Console.WriteLine(k); };
+            }
+            szamkiiro();
 
             #endregion
         }

@@ -8,14 +8,14 @@ namespace _1.het_delegaltak.Models
 {
     public class Storage<T>
     {
-        public delegate void Traverser(T item);
-        public delegate T Transformer(T input);
+        //public delegate void Traverser(T item); // Action<T>
+        //public delegate T Transformer(T input); // Func<T,T>
 
         T[] array;
         int pointer;
-        Transformer transformers;
+        Func<T, T> transformers;
 
-        public void AddTransformer(Transformer tr)
+        public void AddTransformer(Func<T, T> tr)
         {
             transformers += tr;
         } 
@@ -37,7 +37,7 @@ namespace _1.het_delegaltak.Models
             }
         }
 
-        public void Traverse(Traverser tr)
+        public void Traverse(Action<T> tr)
         {
             for (int i = 0; i < pointer; i++)
             {
@@ -49,7 +49,7 @@ namespace _1.het_delegaltak.Models
                     {
                         if (item != null)
                         {
-                            result = (item as Transformer).Invoke(result);
+                            result = (item as Func<T, T>).Invoke(result);
                         }
                     }
                 }
