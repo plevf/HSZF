@@ -8,6 +8,13 @@ namespace _2.het_esemenykezeles.Models
 {
     public class MStorage<T>
     {
+        public delegate void ParameterisedHandler(int index); // sor/oszlop megtelt (melyik telt be)
+        public delegate void MatrixHandler(); // matrix megtelt
+
+        public event ParameterisedHandler RowFull;
+        public event ParameterisedHandler ColumnFull;
+        public event MatrixHandler MatrixFull;
+
         T[,] matrix;
         int count;
         int capacity;
@@ -24,6 +31,10 @@ namespace _2.het_esemenykezeles.Models
                 int[] result = FindPlace();
                 this.matrix[result[0], result[1]] = item;
                 count++;
+                if(count == capacity)
+                {
+                    MatrixFull?.Invoke();
+                }
             }
             else
             {
@@ -39,7 +50,7 @@ namespace _2.het_esemenykezeles.Models
             {
                 row = r.Next(0, matrix.GetLength(0)); //sorok szama
                 column = r.Next(0, matrix.GetLength(1));
-            } while (this.matrix[row, column].Equals(default(T)));
+            } while (this.matrix[row, column] != null);
             /*
              *  Ha T pl. int, akkor default(T) = 0.
 
