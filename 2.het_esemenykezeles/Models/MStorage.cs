@@ -10,12 +10,14 @@ namespace _2.het_esemenykezeles.Models
     {
         public delegate void ParameterisedHandler(int index); // sor/oszlop megtelt (melyik telt be)
         public delegate void MatrixHandler(); // matrix megtelt
+        public delegate void ThreeParameterisedHandler(T item, int i, int j);
 
         public event ParameterisedHandler RowFull;
         public event ParameterisedHandler ColumnFull;
         public event MatrixHandler MatrixFull;
+        public event ThreeParameterisedHandler ItemAdded;
 
-        public T[,] matrix;
+        T[,] matrix;
         int count;
         int capacity;
         Random r = new Random();
@@ -30,15 +32,25 @@ namespace _2.het_esemenykezeles.Models
             {
                 int[] result = FindPlace();
                 this.matrix[result[0], result[1]] = item;
+                ItemAdded?.Invoke(item, result[0], result[1]);
                 count++;
-                if(count == capacity)
+                
+                if (IsThisColumnFull(result[1]))
+                {
+                    ColumnFull?.Invoke(result[1]);
+                }
+                if (IsThisRowFull(result[0]))
+                {
+                    RowFull?.Invoke(result[0]);
+                }
+                if (count == capacity)
                 {
                     MatrixFull?.Invoke();
                 }
             }
             else
             {
-                throw new Exception("Matrix is full"); // ez akkor fut le, ha a matrix mar meg van telve, de meg akarunk belerakni
+                throw new Exception("Matrix is already full!"); // ez akkor fut le, ha a matrix mar meg van telve, de meg akarunk belerakni
             }
         }
         private int[] FindPlace()
@@ -73,7 +85,7 @@ namespace _2.het_esemenykezeles.Models
             return j == matrix.GetLength(1);
         }
 
-        public bool IsThisColumnFull(int index)
+        bool IsThisColumnFull(int index)
         {
             int i = 0;
             int j = index;
