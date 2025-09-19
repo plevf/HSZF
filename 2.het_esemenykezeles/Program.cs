@@ -17,32 +17,12 @@ namespace _2.het_esemenykezeles
                 Console.WriteLine("Matrix is full!");
             }
 
-            st.Add("alma");
-            st.Add("körte");
-            st.Add("barack");
-            st.Add("szilva");
-            st.Add("dinnye");
-            st.Add("mangó");
-            st.Add("ribizli");
-            st.Add("banán");
-            st.Add("szőlő");
+            //columnfull test
+            //st.matrix[0, 0] = "a";
+            //st.matrix[1, 0] = "b";
+            //st.matrix[2, 0] = "c";
 
-            ;
-        }
-
-        private static void MatrixFullToDisplay()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void St_MatrixFull1()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void St_MatrixFull()
-        {
-            throw new NotImplementedException();
+            //Console.WriteLine(st.IsThisColumnFull(0));
         }
     }
 }

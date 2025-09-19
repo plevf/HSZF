@@ -15,7 +15,7 @@ namespace _2.het_esemenykezeles.Models
         public event ParameterisedHandler ColumnFull;
         public event MatrixHandler MatrixFull;
 
-        T[,] matrix;
+        public T[,] matrix;
         int count;
         int capacity;
         Random r = new Random();
@@ -48,7 +48,7 @@ namespace _2.het_esemenykezeles.Models
             int column = -1;
             do
             {
-                row = r.Next(0, matrix.GetLength(0)); //sorok szama
+                row = r.Next(0, matrix.GetLength(0));
                 column = r.Next(0, matrix.GetLength(1));
             } while (this.matrix[row, column] != null);
             /*
@@ -59,6 +59,30 @@ namespace _2.het_esemenykezeles.Models
                 Ha T egy osztály, akkor default(T) = null.
             */
             return new int[] { row, column };
+        }
+
+        private bool IsThisRowFull(int index)
+        {
+            int i = index;
+            int j = 0;
+
+            while (j < matrix.GetLength(1) && matrix[i, j] != null)
+            {
+                j++;
+            }
+            return j == matrix.GetLength(1);
+        }
+
+        public bool IsThisColumnFull(int index)
+        {
+            int i = 0;
+            int j = index;
+
+            while (i < matrix.GetLength(0) && matrix[i, j] != null)
+            {
+                i++;
+            }
+            return i == matrix.GetLength(0);
         }
     }
 }
