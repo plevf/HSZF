@@ -1,4 +1,6 @@
 ﻿using _2.het_esemenykezeles.Models;
+using System;
+using System.Reflection;
 
 namespace _2.het_esemenykezeles
 {
@@ -38,6 +40,44 @@ namespace _2.het_esemenykezeles
             st.Add("h");
             st.Add("i");
 
+            //eventhandler storage
+            MStoragewEH<string> stEH = new MStoragewEH<string>(3, 3);
+
+            stEH.Add("a");
+            stEH.Add("b");
+            stEH.Add("c");
+            stEH.Add("d");
+            stEH.Add("e");
+            stEH.Add("f");
+            stEH.Add("g");
+            stEH.Add("h");
+            stEH.Add("i");
+
+            stEH.MatrixFull += StEH_MatrixFull;
+            stEH.ItemAdded += StEH_ItemAdded;
+            stEH.RowFull += StEH_RowFull;
+            stEH.ColumnFull += StEH_ColumnFull;
+
+        }
+
+        private static void StEH_ColumnFull(object? sender, MStoragewEH<string>.MatrixIndexEventArgs e)
+        {
+            Console.WriteLine($"Column is full: {e.Index}");
+        }
+
+        private static void StEH_RowFull(object? sender, MStoragewEH<string>.MatrixIndexEventArgs e)
+        {
+            Console.WriteLine($"Row is full: {e.Index}");
+        }
+
+        private static void StEH_ItemAdded(object? sender, MStoragewEH<string>.ItemAddedEventArgs e)
+        {
+            Console.WriteLine($"{e.Item} added to row {e.Row}, column {e.Column}");
+        }
+
+        private static void StEH_MatrixFull(object? sender, EventArgs e)
+        {
+            Console.WriteLine("Matrix is full!");
         }
 
         private static void St_ItemAdded(string item, int i, int j)
