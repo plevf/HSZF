@@ -7,90 +7,102 @@ namespace _3.het_fileokEsKonyvtarak
     {
         static void Main(string[] args)
         {
-            string[] lines =
+            #region 1-3
+            //DateTime creation = File.GetCreationTime("pp.png");
+            //Console.WriteLine(creation);
 
-            {
+            //string[] lines =
 
-                "John",
+            //{
 
-                "Jack",
+            //    "John",
 
-                "Kate",
+            //    "Jack",
 
-                "Sawyer"
+            //    "Kate",
 
-            };
-            
+            //    "Sawyer"
 
-            string[] lines2 =
+            //};
 
-            {
 
-                "George",
+            //string[] lines2 =
 
-                "Anne",
+            //{
 
-                "Lee",
+            //    "George",
 
-                "Bush"
+            //    "Anne",
 
-            };
-            File.WriteAllLines("data.txt", lines); //felulir
-            File.AppendAllLines("data.txt", lines2); //hozzarak
+            //    "Lee",
 
-            string content = File.ReadAllText("data.txt");
-            Console.WriteLine(content);
+            //    "Bush"
 
-            StreamReader sr = new StreamReader("data.txt");
-            while (!sr.EndOfStream)
-            {
-                Console.WriteLine(sr.ReadLine());
-            }
-            sr.Close();
+            //};
+            //File.WriteAllLines("data.txt", lines); //felulir
+            //File.AppendAllLines("data.txt", lines2); //hozzarak
 
-            //igy nem kell bezarni:
-            using (StreamReader sr1 = new StreamReader("data.txt"))
+            //string content = File.ReadAllText("data.txt");
+            //Console.WriteLine(content);
 
-            {
+            //StreamReader sr = new StreamReader("data.txt");
+            //while (!sr.EndOfStream)
+            //{
+            //    Console.WriteLine(sr.ReadLine());
+            //}
+            //sr.Close();
 
-                while (!sr1.EndOfStream)
+            ////igy nem kell bezarni:
+            //using (StreamReader sr1 = new StreamReader("data.txt"))
 
-                {
+            //{
 
-                    Console.WriteLine(sr1.ReadLine()); ;
+            //    while (!sr1.EndOfStream)
 
-                }
+            //    {
 
-            }
-            Random r = new Random();
-            using (StreamWriter sw = new StreamWriter("numbers.txt"))
-            {
-                for (int i = 0; i < 100; i++)
-                {
-                    sw.WriteLine(r.Next(0, 101));
-                }
-            }
+            //        Console.WriteLine(sr1.ReadLine()); ;
 
-            StreamWriter sw2 = new StreamWriter("numbers.txt", true); // a true miatt már hozaafuzes tortenne
+            //    }
 
-            string path = Console.ReadLine()!;
-            File.WriteAllText(Path.Combine(path, "video.txt"), "texttttttttt"); //Pl. ha path = "C:\\Temp", akkor az eredmény C:\Temp\video.txt
+            //}
+            //Random r = new Random();
+            //using (StreamWriter sw = new StreamWriter("numbers.txt"))
+            //{
+            //    for (int i = 0; i < 100; i++)
+            //    {
+            //        sw.WriteLine(r.Next(0, 101));
+            //    }
+            //}
 
-            string[] lines1 = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "files", "data.txt")); //igy mindegy milyen OS-en van az eleresi ut
-            string[] lines3 = File.ReadAllLines(@".\files\data.txt"); //tehat ua az mint pl ez
+            //StreamWriter sw2 = new StreamWriter("numbers.txt", true); // a true miatt már hozaafuzes tortenne
 
-            // Verbatim string (kukaccal):
-            string path1 = @"C:\Users\Peter\data.txt";
+            //string path = "a";
+            //File.WriteAllText(Path.Combine(path, "video.txt"), "texttttttttt"); //Pl. ha path = "C:\\Temp", akkor az eredmény C:\Temp\video.txt
 
-            // Normál string (kukac nélkül, dupla backslash kell):
-            string path2 = "C:\\Users\\Peter\\data.txt";
+            //string[] lines1 = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "files", "data.txt")); //igy mindegy milyen OS-en van az eleresi ut
+            //string[] lines3 = File.ReadAllLines(@".\files\data.txt"); //tehat ua az mint pl ez
 
-            //Csak a jpg kiterjesztésű fájlok
+            //// Verbatim string (kukaccal):
+            //string path1 = @"C:\Users\Peter\data.txt";
 
-            string[] fileNames = Directory.GetFiles(path, "*.jpg");
+            //// Normál string (kukac nélkül, dupla backslash kell):
+            //string path2 = "C:\\Users\\Peter\\data.txt";
 
-            //osszes almappa neve:
-            string[] directoryNames = Directory.GetDirectories(path);
+            ////Csak a jpg kiterjesztésű fájlok
+
+            //string[] fileNames = Directory.GetFiles(path, "*.jpg");
+
+            ////osszes almappa neve:
+            //string[] directoryNames = Directory.GetDirectories(path);
+            //Directory.GetCurrentDirectory(); // itt a bin/debug/.net
+            #endregion
+
+            //04
+            // A csatolt fájlban telephelyeket, szervezeti egységeket és azokon belül személyeket tárolunk.
+
+            // Hozzon létre minden telephelynek mappákat, azokon belül a szervezeti egységeknek is mappákat.
+            // Ezeken belül minden dolgozónak a nevére hozzon létre vezetéknév_keresztnév.log nevű fájlt!
 
 
         }
