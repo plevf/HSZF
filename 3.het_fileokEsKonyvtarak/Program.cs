@@ -98,7 +98,6 @@ namespace _3.het_fileokEsKonyvtarak
             //Directory.GetCurrentDirectory(); // itt a bin/debug/.net
             #endregion
 
-            //04
             // A csatolt fájlban telephelyeket, szervezeti egységeket és azokon belül személyeket tárolunk.
 
             // Hozzon létre minden telephelynek mappákat, azokon belül a szervezeti egységeknek is mappákat.
@@ -157,6 +156,33 @@ namespace _3.het_fileokEsKonyvtarak
                             File.Create(Path.Combine(path, l.Name, d.Name, p.Name + ".log")); //itt a letezo mappakon belul hoz letre egy filet
                         }
                     }
+                }
+            }
+
+            // 06
+
+            //Készítsünk egy fájl és mappastruktúra megjelenítő alkalmazást, amely egy fa struktúraként jeleníti meg a mappákat és fájlokat!
+            //Lehessen megadni, hogy mekkora mélységig menjen le!
+
+            string path = Path.Combine("C:", "Users", "porle", "Documents", "temp repos", "New York");
+            ShowDirectory(path);
+
+            static void ShowDirectory(string path, int level = 0)
+            {
+                var di = new DirectoryInfo(path);
+                Console.WriteLine(new string('-', level) + '[' + di.Name + ']'); //kiirja egybol az adott mappa nevet, illetve annyiszor jelenik meg a -, amennyi level van
+
+                var directories = di.GetDirectories();
+                foreach (var d in directories)
+                {
+                    ShowDirectory(d.FullName, level + 1); // egesz utvonal, illetve a levelt mindig 1-gyel noveljuk (1-gyel lentebb megyunk)
+                }
+
+                //almappák bejárása
+                var files = di.GetFiles();
+                foreach (var file in files)
+                {
+                    Console.WriteLine(new string('-', level+1) + file.Name); //kiirja az also file nevet
                 }
             }
         }
