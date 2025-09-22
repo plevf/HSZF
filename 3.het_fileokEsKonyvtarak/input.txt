@@ -1,0 +1,41 @@
+﻿#San Francisco
+	>Sales
+		-Emily Johnson
+		-Michael Smith
+		-Sarah Davis
+		-David Wilson
+	>Development
+		-Jennifer Lee
+		-Robert Brown
+		-Jessica Taylor
+	>Quality
+		-Christopher Harris
+		-Amanda Clark
+#New York
+	>Development
+		-Jennifer Lee
+		-Robert Brown
+	>Testing
+		-Matthew Anderson
+		-Laura Miller
+		-William Jackson
+	>Administration
+		-Kevin Martinez
+		-Ashley Thomas
+#London
+	>Testing
+		-Samantha Evans
+		-Daniel Davis
+	>Quality
+		-Christopher Harris
+		-Amanda Clark
+#Washington
+	>Development
+		-Jennifer Lee
+		-Robert Brown
+		-Jessica Taylor
+	>Testing
+		-Samantha Evans
+	>Sales
+		-Michael Smith
+		-Sarah Davis

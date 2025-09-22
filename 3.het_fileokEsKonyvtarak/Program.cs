@@ -104,7 +104,61 @@ namespace _3.het_fileokEsKonyvtarak
             // Hozzon létre minden telephelynek mappákat, azokon belül a szervezeti egységeknek is mappákat.
             // Ezeken belül minden dolgozónak a nevére hozzon létre vezetéknév_keresztnév.log nevű fájlt!
 
+            List<Location> location = new List<Location>();
+            Import(location);
+            Generator(location);
 
+            static void Import(List<Location> location)
+            {
+                using (StreamReader sr = new StreamReader("input.txt"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+
+                        if (line.StartsWith("#") && line != null)
+                        {
+                            location.Add(new Location
+                            {
+                                Name = line.Substring(1) //# nem lesz benne mert elso karaktertol indulunk
+                            });
+                        }
+                        else if (line.StartsWith("\t>") && line != null)
+                        {
+
+                            location.Last().Departments.Add(new Department // az utoljara hozzaadott locationhoz megy a department (mivel a fileban egymas alatt vannak) - location.Departments.Add nem elég mert ez egy lista, location[i] lehetne még
+                            {
+                                Name = line.Substring(2)
+                            });
+                        }
+                        else if (line.StartsWith("\t\t-") && line != null)
+                        {
+                            location.Last().Departments.Last().People.Add(new Person
+                            {
+                                Name = line.Substring(3)
+                            });
+                        }
+                    }
+                }
+            }
+            
+            static void Generator(List<Location> location)
+            {
+                //string path = @"C:\Users\porle\Documents\temp repos";
+                string path = Path.Combine("C:", "Users", "porle", "Documents", "temp repos");
+                foreach (var l in location)
+                {
+                    Directory.CreateDirectory(Path.Combine(path, l.Name)); // temp repos mappaban pl washingtol nevu mappa lesz
+                    foreach (var d in l.Departments)
+                    {
+                        Directory.CreateDirectory(Path.Combine(path, l.Name, d.Name));
+                        foreach(var p in d.People)
+                        {
+                            File.Create(Path.Combine(path, l.Name, d.Name, p.Name + ".log")); //itt a letezo mappakon belul hoz letre egy filet
+                        }
+                    }
+                }
+            }
         }
     }
 }
