@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.het_esemenykezeles", "2.h
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.het_fileokEsKonyvtarak", "3.het_fileokEsKonyvtarak\3.het_fileokEsKonyvtarak.csproj", "{03BEFE20-7017-43BF-B3C5-C58978A0668A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.het_linq", "4.het_linq\4.het_linq.csproj", "{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{03BEFE20-7017-43BF-B3C5-C58978A0668A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03BEFE20-7017-43BF-B3C5-C58978A0668A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03BEFE20-7017-43BF-B3C5-C58978A0668A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
