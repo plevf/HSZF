@@ -83,5 +83,8 @@ var haromLegjobbNeve = students
     .OrderByDescending(p => p.Mark)
     .Take(3)
     .Select(t => t.Name);
-;
+//ua
+var haromLegjobbNeve2 = from t in students
+                        orderby t.Mark descending
+                        select t.Name.Take(3);
 
