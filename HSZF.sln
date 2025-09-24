@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_1", "5.het_lab\5.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_2", "5.het_lab_2\5.het_lab_2.csproj", "{A4163902-9956-498D-BD79-1A75BC6FF9D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_3", "5.het_lab_3\5.het_lab_3.csproj", "{76DB07BF-4791-4B93-8EA4-A09372AD3689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_4", "5.het_lab_4\5.het_lab_4.csproj", "{DC07EE4A-0517-48AF-B9C2-1BCBAD333480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76DB07BF-4791-4B93-8EA4-A09372AD3689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76DB07BF-4791-4B93-8EA4-A09372AD3689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76DB07BF-4791-4B93-8EA4-A09372AD3689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76DB07BF-4791-4B93-8EA4-A09372AD3689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC07EE4A-0517-48AF-B9C2-1BCBAD333480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC07EE4A-0517-48AF-B9C2-1BCBAD333480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC07EE4A-0517-48AF-B9C2-1BCBAD333480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC07EE4A-0517-48AF-B9C2-1BCBAD333480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
