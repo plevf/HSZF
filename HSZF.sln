@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.het_fileokEsKonyvtarak", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.het_linq", "4.het_linq\4.het_linq.csproj", "{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_1", "5.het_lab\5.het_lab_1.csproj", "{5737F50C-2E33-4013-91EE-729EEF28C49C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_2", "5.het_lab_2\5.het_lab_2.csproj", "{A4163902-9956-498D-BD79-1A75BC6FF9D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08BB8CF8-8E62-45B7-B21D-80CA1FFB1D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5737F50C-2E33-4013-91EE-729EEF28C49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5737F50C-2E33-4013-91EE-729EEF28C49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5737F50C-2E33-4013-91EE-729EEF28C49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5737F50C-2E33-4013-91EE-729EEF28C49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4163902-9956-498D-BD79-1A75BC6FF9D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
