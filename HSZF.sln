@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_3", "5.het_lab_3\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_4", "5.het_lab_4\5.het_lab_4.csproj", "{DC07EE4A-0517-48AF-B9C2-1BCBAD333480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mintha_zh", "mintha_zh\mintha_zh.csproj", "{8EADD0C2-DB49-4963-9899-2DC77A53CE50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minta_zh", "mintha_zh\minta_zh.csproj", "{8EADD0C2-DB49-4963-9899-2DC77A53CE50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

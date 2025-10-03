@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mintha_zh
+namespace minta_zh
 {
     public class Car
     {
@@ -12,6 +12,8 @@ namespace mintha_zh
         string type;
         int year;
         int price;
+
+        public string Brand => brand;
 
         public Car(string brand, string type, int year, int price)
         {
