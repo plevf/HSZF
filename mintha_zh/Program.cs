@@ -6,7 +6,7 @@ namespace minta_zh
     {
         static void Main(string[] args)
         {
-            EventHandler<CarCounterByBrandEventArgs> handler = (sender, args) => Console.WriteLine($"")
+            EventHandler<CarCounterByBrandEventArgs> handler = (sender, args) => Console.WriteLine($"There are {args.Count}");
         }
         
     }

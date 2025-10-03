@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="C:\Users\porle\Documents\temp repos\HSZF\minta_zh\CarCounterByBrandEventArgs.cs" Link="CarCounterByBrandEventArgs.cs" />
-  </ItemGroup>
-
 </Project>
