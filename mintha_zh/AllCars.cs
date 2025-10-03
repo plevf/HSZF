@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace minta_zh
 {
-    public class AllCars : EventArgs
+    public class AllCars : EventArgs // Car listát csinál és tárol
     {
-        List<Car> cars;
+        public List<Car> Cars { get; set; }
         
         public AllCars(string fileName)
         {
-            cars = ReadFile(fileName);
+            Cars = ReadFile(fileName);
         }
         public List<Car> ReadFile(string fileName)
         {
