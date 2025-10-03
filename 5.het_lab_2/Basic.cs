@@ -36,7 +36,7 @@ namespace _5.het_lab
 
             processor.FileProcessed += f => Console.WriteLine($"Log: {f} done."); //eventnek nem lehet erteket adni
 
-            EventHandler<FileProcessedEventArgs> auditHandler = (sender, e) => Console.WriteLine("Audit: " + e.FileName);
+            EventHandler<FileProcessedEventArgs> auditHandler = (sender, e) => Console.WriteLine("Audit: " + e.FileName + " Sender: " + sender);
             processor.FileProcessGeneric += auditHandler;
 
             processor.Process("data1.csv");

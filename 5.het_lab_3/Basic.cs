@@ -18,7 +18,6 @@ namespace _5.het_lab_3
             File.WriteAllText(filePath, "Első sor\n");
             File.AppendAllText(filePath, "Második");
             IEnumerable<string> lines = File.ReadLines(filePath);
-
             using(var reader = new StreamReader(filePath))
             {
                 string? line;
