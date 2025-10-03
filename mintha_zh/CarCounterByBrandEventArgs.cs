@@ -19,12 +19,5 @@ namespace minta_zh
             Count = cars.Count(p => p.Brand == brand);
             Brand = brand;
         }
-
-        public event EventHandler<CarCounterByBrandEventArgs>? CarCountByBrand;
-
-        public void Counter(string fileName, string brand)
-        {
-            CarCountByBrand?.Invoke(this, new CarCounterByBrandEventArgs(fileName, brand));
-        }
     }
 }

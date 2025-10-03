@@ -27,5 +27,10 @@ namespace minta_zh
             }
             return cars;
         }
+        public event EventHandler<CarCounterByBrandEventArgs>? CarCountByBrand;
+        public void Counter(string fileName, string brand)
+        {
+            CarCountByBrand?.Invoke(this, new CarCounterByBrandEventArgs(fileName, brand));
+        }
     }
 }
