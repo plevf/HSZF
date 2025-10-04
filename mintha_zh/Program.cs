@@ -36,7 +36,7 @@ namespace minta_zh
                 Console.WriteLine("ReadingFailedException catched");
             }
 
-            //LINQ
+            //LINQ ----------------------------------------------------------------
 
             List<Car> carsForLinq = service.ReadFile(fileName);
 
@@ -69,10 +69,42 @@ namespace minta_zh
                     Console.WriteLine($"{item.Type} - {item.Price} Ft");
                 }
             }
+            Console.WriteLine();
 
             // Add vissza egy anonym objektumba az autók teljes nevét (Brand – Model), az évjáratát, és az életkorát.
 
+            var anonymobject = carsForLinq.
+                Select(t => new
+                {
+                    Name = t.Brand + " - " + t.Type,
+                    Age = 2025 - t.Year
+                });
 
+
+            // Add vissza az autókat márkánként darabszám, ár-átlag szerint csökkenő.
+
+            var brandsOrderedByAvgPrice = carsForLinq
+                .GroupBy(p => p.Brand)
+                .Select(t => new
+                {
+                    Brand = t.Key,
+                    AvgPrice = t.Average(p => p.Price),
+                    Count = t.Count()
+                })
+                //.OrderByDescending(t => t.Count) //darabszam ??
+                .OrderByDescending(t => t.AvgPrice);
+
+            var brandsOrderedByAvgPrice1 = carsForLinq
+                .GroupBy(p => p.Brand);
+
+            //foreach (var brand in brandsOrderedByAvgPrice) // sima group by esetén kiírás
+            //{
+            //    Console.WriteLine($"\n{brand.Key}:\n");
+            //    foreach (var car in brand)
+            //    {
+            //        Console.WriteLine($"{car.Type}: {car.Price} Ft");
+            //    }
+            //}
         }
     }
 }
