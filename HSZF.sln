@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.het_lab_4", "5.het_lab_4\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minta_zh", "mintha_zh\minta_zh.csproj", "{8EADD0C2-DB49-4963-9899-2DC77A53CE50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minta_zh_gyak", "minta_zh_gyak\minta_zh_gyak.csproj", "{5BDE641E-3CF1-480E-B9C5-71CA4A01333E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{8EADD0C2-DB49-4963-9899-2DC77A53CE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EADD0C2-DB49-4963-9899-2DC77A53CE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EADD0C2-DB49-4963-9899-2DC77A53CE50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BDE641E-3CF1-480E-B9C5-71CA4A01333E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDE641E-3CF1-480E-B9C5-71CA4A01333E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDE641E-3CF1-480E-B9C5-71CA4A01333E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDE641E-3CF1-480E-B9C5-71CA4A01333E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
