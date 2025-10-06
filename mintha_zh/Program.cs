@@ -1,5 +1,7 @@
 ﻿using minta_zh.Exceptions;
 using System.Diagnostics.Metrics;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Channels;
 
 namespace minta_zh
@@ -122,6 +124,38 @@ namespace minta_zh
             //        Console.WriteLine($"{car.Type}: {car.Price} Ft");
             //    }
             //}
+
+            // Analyze ----------------------------------------------------------------
+
+            // Hívd meg a főprogramban az Analyze függvényt egy olyan függvénnyel amivel egy adott évjáratu autók összértéke számolható ki.
+
+            Car[] carArr = carsForLinq.ToArray();
+            var carF = new CarFinancial();
+
+            //decimal res = carF.Analyze(PriceSumByAge, carArr);
+
+            //---ha nem akarom beegetni az evszamot:
+            int searchedYear = 2020;
+            decimal result = carF.Analyze(car => car.Year == searchedYear ? car.Price : 0, carArr); // inline fv
+            //---
+
+            // creating dir
+            if(!Directory.Exists(Convert.ToString(searchedYear)))
+                Directory.CreateDirectory(Convert.ToString(searchedYear));
+
+            // creating txt file
+            string fileNameDatum = DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
+            string path = Path.Combine(Convert.ToString(searchedYear), fileNameDatum);
+            // File.Create nem kell, mert a WriteAllText letrehozza
+            File.WriteAllText(path, $"Total price of cars made in {searchedYear}: {result} Ft");
         }
+        //public static decimal PriceSumByAge(Car car)
+        //{
+        //    int targetYear = 2020;
+        //    if (car.Year == targetYear)
+        //        return car.Price;
+        //    else
+        //        return 0;
+        //}
     }
 }
