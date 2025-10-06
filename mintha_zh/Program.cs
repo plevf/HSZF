@@ -48,7 +48,7 @@ namespace minta_zh
                 Console.WriteLine($"{item.Type} - {item.Price} Ft");
             }
 
-            Console.WriteLine("\nLegolcsobb auto(k):\n");
+            Console.WriteLine("\nCheapest car(s):\n");
             // legolcsobb
             var min = carsForLinq.Min(p => p.Price);
             foreach (var item in carsForLinq)
@@ -59,7 +59,7 @@ namespace minta_zh
                 }
             }
 
-            Console.WriteLine("\nLegdragabb auto(k):\n");
+            Console.WriteLine("\nMost expensive car(s):\n");
             // legdragabb
             var max = carsForLinq.Max(p => p.Price);
             foreach (var item in carsForLinq)
@@ -70,6 +70,8 @@ namespace minta_zh
                 }
             }
             Console.WriteLine();
+            Console.WriteLine("Anonym object:");
+            Console.WriteLine();
 
             // Add vissza egy anonym objektumba az autók teljes nevét (Brand – Model), az évjáratát, és az életkorát.
 
@@ -77,10 +79,16 @@ namespace minta_zh
                 Select(t => new
                 {
                     Name = t.Brand + " - " + t.Type,
-                    Age = 2025 - t.Year
+                    Age = DateTime.Now.Year - t.Year
                 });
+            foreach (var t in anonymobject)
+            {
+                Console.WriteLine(t.Name + ": " + t.Age + "year(s) old");
+            }
 
-
+            Console.WriteLine();
+            Console.WriteLine("Márkánként darabszám, ár-átlag szerint csökkenő:");
+            Console.WriteLine();
             // Add vissza az autókat márkánként darabszám, ár-átlag szerint csökkenő.
 
             var brandsOrderedByAvgPrice = carsForLinq
@@ -89,15 +97,24 @@ namespace minta_zh
                 {
                     Brand = t.Key,
                     AvgPrice = t.Average(p => p.Price),
-                    Count = t.Count()
+                    Count = t.Count(),
+                    Cars = t.ToList() // csak a kiiras kedveert (minden markahoz keszul egy lista)
                 })
-                //.OrderByDescending(t => t.Count) //darabszam ??
                 .OrderByDescending(t => t.AvgPrice);
 
-            var brandsOrderedByAvgPrice1 = carsForLinq
-                .GroupBy(p => p.Brand);
+            foreach (var item in brandsOrderedByAvgPrice)
+            {
+                Console.WriteLine($"\n{item.Brand} - (Average price: {item.AvgPrice})\n");
+                foreach (var p in item.Cars)
+                {
+                    Console.WriteLine($"{p.Type}: {p.Price} Ft");
+                }
+            }
 
-            //foreach (var brand in brandsOrderedByAvgPrice) // sima group by esetén kiírás
+            //var brandsOrderedByAvgPriceGroupBy = carsForLinq
+            //    .GroupBy(p => p.Brand);
+
+            //foreach (var brand in brandsOrderedByAvgPriceGroupBy) // sima group by esetén kiírás
             //{
             //    Console.WriteLine($"\n{brand.Key}:\n");
             //    foreach (var car in brand)

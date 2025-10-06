@@ -33,9 +33,9 @@ namespace minta_zh
                         string[] car = sr.ReadLine().Split(';');
                         cars.Add(new Car(car[0], car[1], int.Parse(car[2]), int.Parse(car[3])));
                     }
-                    catch (ReadingFailedException)
+                    catch (Exception ex)
                     {
-                        throw;
+                        throw new ReadingFailedException("Reading failed: " + ex);
                     }
                 }
             }
