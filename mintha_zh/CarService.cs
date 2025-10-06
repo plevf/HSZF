@@ -28,18 +28,18 @@ namespace minta_zh
             {
                 while (!sr.EndOfStream)
                 {
-                    string[] car = sr.ReadLine().Split(';');
-                    cars.Add(new Car(car[0], car[1], int.Parse(car[2]), int.Parse(car[3])));
+                    try
+                    {
+                        string[] car = sr.ReadLine().Split(';');
+                        cars.Add(new Car(car[0], car[1], int.Parse(car[2]), int.Parse(car[3])));
+                    }
+                    catch (ReadingFailedException)
+                    {
+                        throw;
+                    }
                 }
             }
-            if(cars.Count > 0)
-            {
-                return cars;
-            }
-            else
-            {
-                throw new ReadingFailedException();
-            }
+            return cars;
         }
     }
 }
