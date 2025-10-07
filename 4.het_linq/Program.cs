@@ -136,6 +136,60 @@ namespace _4.het_linq
 
             //var groups = people.GroupBy(p => p.Level) //itt a level a key
 
+                    var rooms = new Room[]
+
+                        {
+
+                        new Room("BA.213", new Subject[]
+
+                        {
+
+                            new Subject("elektro"),
+
+                            new Subject("digit")
+
+                        }),
+
+                        new Room("BA.210", new Subject[]
+
+                        {
+
+                            new Subject("hft"),
+
+                            new Subject("sztgui")
+
+                        }),
+
+                        new Room("BA.119", new Subject[]
+
+                        {
+
+                            new Subject("iba")
+
+                        }),
+
+                        };
+
+                            }
+                        }
+    public class Room
+    {
+        string name;
+        Subject[] sub;
+
+        public Room(string name, Subject[] sub)
+        {
+            this.name = name;
+            this.sub = sub;
+        }
+    }
+    public class Subject
+    {
+        string name;
+
+        public Subject(string name)
+        {
+            this.name = name;
         }
     }
 
@@ -187,6 +241,7 @@ namespace _4.het_linq
             Level = level;
             Exp = exp;
         }
+
     }
 
 }

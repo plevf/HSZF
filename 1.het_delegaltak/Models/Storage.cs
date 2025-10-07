@@ -18,7 +18,7 @@ namespace _1.het_delegaltak.Models
         public void AddTransformer(Func<T, T> tr)
         {
             transformers += tr;
-        } 
+        }
 
         public Storage(int size)
         {
