@@ -136,56 +136,68 @@ namespace _4.het_linq
 
             //var groups = people.GroupBy(p => p.Level) //itt a level a key
 
-                    var rooms = new Room[]
+            var rooms = new Room[]
+            {
 
-                        {
+                new Room("BA.213", new Subject[]
+                {
 
-                        new Room("BA.213", new Subject[]
+                    new Subject("elektro"),
 
-                        {
+                    new Subject("digit")
 
-                            new Subject("elektro"),
+                }),
 
-                            new Subject("digit")
+                new Room("BA.210", new Subject[]
+                {
 
-                        }),
+                    new Subject("hft"),
 
-                        new Room("BA.210", new Subject[]
+                    new Subject("sztgui")
 
-                        {
+                }),
 
-                            new Subject("hft"),
+                new Room("BA.119", new Subject[]
+                {
 
-                            new Subject("sztgui")
+                    new Subject("iba")
 
-                        }),
+                }),
 
-                        new Room("BA.119", new Subject[]
+            };
 
-                        {
+            var r = rooms.SelectMany(t => t.Subjects, (room, subject) => new
 
-                            new Subject("iba")
+            {
 
-                        }),
+                RoomName = room.name,
 
-                        };
+                SubjectName = subject.name
 
-                            }
-                        }
+            });
+            //Console.WriteLine("SelectMany eredménye:\n");
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.RoomName} - {item.SubjectName}");
+            //}
+
+        }
+    }
+
     public class Room
     {
-        string name;
-        Subject[] sub;
+        public string name;
+        public Subject[] Subjects;
 
         public Room(string name, Subject[] sub)
         {
             this.name = name;
-            this.sub = sub;
+            this.Subjects = sub;
         }
     }
     public class Subject
     {
-        string name;
+        public string name;
 
         public Subject(string name)
         {
