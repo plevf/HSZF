@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zh_gyak_2.Models
 {
-    public class CountByBrandEventArgs
+    public class CountByBrandEventArgs : EventArgs
     {
         public string Brand { get; }
         public int Count { get; }
