@@ -68,6 +68,17 @@ namespace zh_gyak_2
                     AvgPrice = p.Average(p => p.Price)
                 })
                 .OrderByDescending(p => p.AvgPrice);
+
+            CarFinancial carFin = new CarFinancial();
+            int year = 2021;
+            var carArr = cars.ToArray();
+            decimal res = carFin.Analyze(p => p.Year == year ? p.Price : 0, carArr);
+
+            if (!Directory.Exists(year.ToString()))
+            {
+                Directory.CreateDirectory(year.ToString());
+            }
+            File.WriteAllText(Path.Combine(year.ToString(), DateTime.Now.ToString("yyyy-MM-dd") + ".txt"), "Result of analyze: " + res);
         }
     }
 }
