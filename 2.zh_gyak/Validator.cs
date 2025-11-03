@@ -14,7 +14,7 @@ namespace _2.zh_gyak
             var type = prod.GetType();
             foreach (var prop in type.GetProperties())
             {
-                var attr = prop.GetCustomAttribute<RequiredNonEmptyAttribute>();
+                var attr = prop.GetCustomAttribute<RequiredNonEmptyAttribute>(); // miért szükséges jelen esetben ez az üres attributum? (sztem nem az)
                 if (attr != null)
                 {
                     var propValue = (string)prop.GetValue(prod);
@@ -26,5 +26,7 @@ namespace _2.zh_gyak
             }
             return true;
         }
+
+        //TODO
     }
 }
