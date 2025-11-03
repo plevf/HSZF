@@ -69,7 +69,7 @@ namespace _2.zh_gyak
         [System.Xml.Serialization.XmlIgnore]
         public int CatergoryId { get; set; } // pluszba
 
-        [RequiredNonEmpty]
+        [RequiredNonEmpty] // cikkszamra raktuk ra (attribute)
         /// <remarks/>
         public string Sku
         {
