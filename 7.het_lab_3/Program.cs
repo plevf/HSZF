@@ -2,6 +2,7 @@
 
 using System.Reflection;
 using System.Text.Json.Serialization;
+using System.Xml.Linq;
 
 namespace _7.het_lab_3
 {
@@ -10,12 +11,12 @@ namespace _7.het_lab_3
 
     public class Person
     {
-        [Required] // custom attribute
+        [Required] // ez egy attribute - az id-t kotelezo megadni
         public int Id { get; set; }
-        [JsonPropertyName("last_name")] // python-ban ez a konvencio
+        [JsonPropertyName("last_name")] // (python-ban ez a konvencio) - a json fajlban igy fog szerepelni
         public string LastName { get; set; } = "";
         public string FirstName { get; set; } = "";
-        [Label("Kor")] // itt mar eleg csak Label-t irni (mindig a prop felé kell irni?)
+        [Label("Kor")] // itt mar eleg csak Label-t irni (mindig a prop felé kell irni) - custom attribute
         public int Age { get; set; }
     }
 
@@ -91,9 +92,10 @@ namespace _7.het_lab_3
                 Age = 30
             };
 
-            var t = typeof(Person);
+            var t = typeof(Person); // Person tipusa
 
             Console.WriteLine("tpye: " + t.FullName);
+
 
             foreach (var prop in t.GetProperties())
             {
