@@ -11,6 +11,7 @@ namespace _7.het_lab_3
 
     public class Person
     {
+        int count = 4;
         [Required] // ez egy attribute - az id-t kotelezo megadni
         public int Id { get; set; }
         [JsonPropertyName("last_name")] // (python-ban ez a konvencio) - a json fajlban igy fog szerepelni
@@ -71,7 +72,7 @@ namespace _7.het_lab_3
         {
             var t = typeof(Person);
             var lastNameProp = t.GetProperty("LastName");
-            var jsonAttr = lastNameProp?.GetCustomAttribute<JsonPropertyNameAttribute>();
+            var jsonAttr = lastNameProp?.GetCustomAttribute<JsonPropertyNameAttribute>(); // ebben van a json property neve
             if (jsonAttr != null)
             {
                 Console.WriteLine("Json property name for LastName: " + jsonAttr.Name);
@@ -80,6 +81,11 @@ namespace _7.het_lab_3
             {
                 Console.WriteLine("JsonPropertyNameAttribute not found on LastName property.");
             }
+
+            //
+            var countProp = t.GetField("count", BindingFlags.NonPublic | BindingFlags.Instance); // private field lekerese
+            Console.WriteLine("Value of the private field: " + countProp.GetValue(new Person()));
+            //
         }
 
         private static void Reflection_Basics()
