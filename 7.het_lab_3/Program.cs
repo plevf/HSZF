@@ -44,7 +44,7 @@ namespace _7.het_lab_3
             CustomAttribute();
         }
 
-        private static void CustomAttribute()
+        private static void CustomAttribute() // LabelAttribute
         {
             var p = new Person
             {
@@ -55,7 +55,7 @@ namespace _7.het_lab_3
             };
 
             var t = typeof(Person);
-            var ageProp = t.GetProperty("LastName");
+            var ageProp = t.GetProperty("Age"); // ???
             var jsonAttr = ageProp?.GetCustomAttribute<JsonPropertyNameAttribute>();
             if (jsonAttr != null)
             {
@@ -63,7 +63,7 @@ namespace _7.het_lab_3
             }
             else
             {
-                Console.WriteLine("JsonPropertyNameAttribute not found on LastName property.");
+                Console.WriteLine("JsonPropertyNameAttribute not found on Age property.");
             }
 
         }

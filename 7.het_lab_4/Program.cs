@@ -49,7 +49,7 @@ namespace _7.het_lab_4
 
             db.Database.EnsureCreated(); // ha nem letezik az adatbazis, akkor letrehozza
 
-            if (!db.Authors.Any())
+            if (!db.Authors.Any()) // van e mar adat az Authors tablaban (legalabb 1)
             {
                 var john = new Author { Name = "John Doe" };
                 var jane = new Author { Name = "Jane Smith" };

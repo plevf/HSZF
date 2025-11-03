@@ -1,0 +1,304 @@
+﻿<ProductPackage>
+	<Categories>
+		<Category>
+			<Name>Coffee</Name>
+			<Products>
+				<Product>
+					<Sku>COF-1001</Sku>
+					<Name>Premium Arabica</Name>
+					<Price>12990</Price>
+				</Product>
+				<Product>
+					<Sku/>
+					<Name>Extra Dark Roast</Name>
+					<Price>9990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Tea</Name>
+			<Products>
+				<Product>
+					<Sku>TEA-2001</Sku>
+					<Name>Green Tea</Name>
+					<Price>14990</Price>
+				</Product>
+				<Product>
+					<Sku>TEA-2002</Sku>
+					<Name>Black Tea</Name>
+					<Price>8990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Chocolate</Name>
+			<Products>
+				<Product>
+					<Sku>CHO-3001</Sku>
+					<Name>Dark Chocolate 85%</Name>
+					<Price>11990</Price>
+				</Product>
+				<Product>
+					<Sku>CHO-3002</Sku>
+					<Name>Milk Chocolate</Name>
+					<Price>4990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Biscuits</Name>
+			<Products>
+				<Product>
+					<Sku>BIS-4001</Sku>
+					<Name>Butter Cookies</Name>
+					<Price>10990</Price>
+				</Product>
+				<Product>
+					<Sku>BIS-4002</Sku>
+					<Name>Chocolate Chip</Name>
+					<Price>9990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Juice</Name>
+			<Products>
+				<Product>
+					<Sku>JUI-5001</Sku>
+					<Name>Orange Juice</Name>
+					<Price>6990</Price>
+				</Product>
+				<Product>
+					<Sku>JUI-5002</Sku>
+					<Name>Mango Juice</Name>
+					<Price>10990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Snacks</Name>
+			<Products>
+				<Product>
+					<Sku>SNA-6001</Sku>
+					<Name>Potato Chips</Name>
+					<Price>4990</Price>
+				</Product>
+				<Product>
+					<Sku>SNA-6002</Sku>
+					<Name>Nachos Cheese</Name>
+					<Price>11990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Water</Name>
+			<Products>
+				<Product>
+					<Sku>WAT-7001</Sku>
+					<Name>Mineral Water 0.5L</Name>
+					<Price>1990</Price>
+				</Product>
+				<Product>
+					<Sku>WAT-7002</Sku>
+					<Name>Mineral Water 1.5L</Name>
+					<Price>2490</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Energy Drinks</Name>
+			<Products>
+				<Product>
+					<Sku>ENE-8001</Sku>
+					<Name>Energy Boost</Name>
+					<Price>11990</Price>
+				</Product>
+				<Product>
+					<Sku>ENE-8002</Sku>
+					<Name>Zero Sugar Energy</Name>
+					<Price>10990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Beer</Name>
+			<Products>
+				<Product>
+					<Sku>BEE-9001</Sku>
+					<Name>Lager Classic</Name>
+					<Price>5990</Price>
+				</Product>
+				<Product>
+					<Sku/>
+					<Name>Craft IPA</Name>
+					<Price>12990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Wine</Name>
+			<Products>
+				<Product>
+					<Sku>WIN-10001</Sku>
+					<Name>Red Merlot</Name>
+					<Price>18990</Price>
+				</Product>
+				<Product>
+					<Sku>WIN-10002</Sku>
+					<Name>White Chardonnay</Name>
+					<Price>17990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Cheese</Name>
+			<Products>
+				<Product>
+					<Sku>CHE-11001</Sku>
+					<Name>Gouda</Name>
+					<Price>8990</Price>
+				</Product>
+				<Product>
+					<Sku>CHE-11002</Sku>
+					<Name>Parmesan</Name>
+					<Price>13990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Meat</Name>
+			<Products>
+				<Product>
+					<Sku>MEA-12001</Sku>
+					<Name>Beef Steak</Name>
+					<Price>25990</Price>
+				</Product>
+				<Product>
+					<Sku>MEA-12002</Sku>
+					<Name>Pork Sausage</Name>
+					<Price>9990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Fish</Name>
+			<Products>
+				<Product>
+					<Sku>FIS-13001</Sku>
+					<Name>Salmon Fillet</Name>
+					<Price>18990</Price>
+				</Product>
+				<Product>
+					<Sku>FIS-13002</Sku>
+					<Name>Tuna Can</Name>
+					<Price>6990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Vegetables</Name>
+			<Products>
+				<Product>
+					<Sku>VEG-14001</Sku>
+					<Name>Broccoli</Name>
+					<Price>4990</Price>
+				</Product>
+				<Product>
+					<Sku>VEG-14002</Sku>
+					<Name>Carrots</Name>
+					<Price>2990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Fruits</Name>
+			<Products>
+				<Product>
+					<Sku>FRU-15001</Sku>
+					<Name>Bananas</Name>
+					<Price>3990</Price>
+				</Product>
+				<Product>
+					<Sku>FRU-15002</Sku>
+					<Name>Apples</Name>
+					<Price>4490</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Dairy</Name>
+			<Products>
+				<Product>
+					<Sku/>
+					<Name>Whole Milk</Name>
+					<Price>2590</Price>
+				</Product>
+				<Product>
+					<Sku>DAI-16002</Sku>
+					<Name>Yogurt</Name>
+					<Price>3290</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Bread</Name>
+			<Products>
+				<Product>
+					<Sku>BRE-17001</Sku>
+					<Name>Wholegrain Bread</Name>
+					<Price>6990</Price>
+				</Product>
+				<Product>
+					<Sku>BRE-17002</Sku>
+					<Name>White Toast</Name>
+					<Price>5990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Electronics</Name>
+			<Products>
+				<Product>
+					<Sku>ELE-18001</Sku>
+					<Name>Wireless Headphones</Name>
+					<Price>29990</Price>
+				</Product>
+				<Product>
+					<Sku>ELE-18002</Sku>
+					<Name>Bluetooth Speaker</Name>
+					<Price>24990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Books</Name>
+			<Products>
+				<Product>
+					<Sku>BOO-19001</Sku>
+					<Name>Programming in C#</Name>
+					<Price>15990</Price>
+				</Product>
+				<Product>
+					<Sku>BOO-19002</Sku>
+					<Name>History of AI</Name>
+					<Price>18990</Price>
+				</Product>
+			</Products>
+		</Category>
+		<Category>
+			<Name>Games</Name>
+			<Products>
+				<Product>
+					<Sku>GAM-20001</Sku>
+					<Name>Chess Set</Name>
+					<Price>8990</Price>
+				</Product>
+				<Product>
+					<Sku/>
+					<Name>Video Game Controller</Name>
+					<Price>21990</Price>
+				</Product>
+			</Products>
+		</Category>
+	</Categories>
+</ProductPackage>
