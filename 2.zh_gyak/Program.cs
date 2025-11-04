@@ -10,7 +10,7 @@ namespace _2.zh_gyak
 
             var categories = new List<Category>();
 
-            XDocument xdoc = new XDocument("termekek.xml");
+            var xdoc = XDocument.Load("termekek.xml");
             foreach (var category in xdoc.Descendants("Category"))
             {
                 var productsXML = category.Element("Products").Elements("Product"); // ElementS!!!! mivel adott kategorian belul egy products van de tobb product
@@ -33,10 +33,9 @@ namespace _2.zh_gyak
             }
 
             // JSON beolvasas
-
             var categoriesJSON = new List<CategoryJ>();
 
-            XDocument xdocJ = new XDocument("Products.json");
+            XDocument xdocJ = XDocument.Load("Products.json");
             foreach (var category in xdocJ.Descendants("Category"))
             {
                 var productsJSON = category.Element("Products").Elements("Product");
