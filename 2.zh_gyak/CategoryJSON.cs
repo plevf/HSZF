@@ -6,40 +6,19 @@ using System.Threading.Tasks;
 
 namespace _2.zh_gyak
 {
-
-    //public class RootobjectJ
+    //public class Category
     //{
-    //    public ProductpackageJ ProductPackageJ { get; set; }
+    //    public int Id { get; set; }
+    //    public string Name { get; set; } = string.Empty;
+    //    public List<Product> ProductsJ { get; set; } = new List<Product>();
     //}
 
-    //public class ProductpackageJ
+    //public class Product
     //{
-    //    public CategoriesJ CategoriesJ { get; set; }
+    //    public int Id { get; set; }
+    //    [RequiredNonEmpty]
+    //    public string? Sku { get; set; }
+    //    public string Name { get; set; }
+    //    public int PriceJ { get; set; }
     //}
-
-    //public class CategoriesJ
-    //{
-    //    public Category[] CategoryJ { get; set; }
-    //}
-
-    public class CategoryJ
-    {
-        public int Id { get; set; }
-        public string NameJ { get; set; } = string.Empty;
-        public List<ProductJ> ProductsJ { get; set; } = new List<ProductJ>();
-    }
-
-    //public class ProductsJ
-    //{
-    //    public Product[] ProductJ { get; set; }
-    //}
-
-    public class ProductJ
-    {
-        public int Id { get; set; }
-        [RequiredNonEmpty]
-        public string? SkuJ { get; set; }
-        public string NameJ { get; set; }
-        public int PriceJ { get; set; }
-    }
 }

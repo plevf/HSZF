@@ -45,7 +45,7 @@ namespace _2.zh_gyak
             foreach (var category in categories)
             {
                 category.Products = category.Products
-                    .Where(p => p.Price > 10000)
+                    .Where(p => p.Price > 10000 && Validator.Isvalid(p))
                     .ToList();
             }
             
@@ -70,9 +70,11 @@ namespace _2.zh_gyak
             // ------------------------------
 
             // Bónusz2: JSON
-            var json = File.ReadAllText("products.json");
-            var categoryJs = JsonConvert.DeserializeObject<List<CategoryJ>>(json);
+            
 
+
+            // Adatbazis kiiratasa ----------
+            Console.WriteLine("\nJSON\n");
 
 
             // Bonusz 3 kiiratasa

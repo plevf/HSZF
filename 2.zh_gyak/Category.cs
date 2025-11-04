@@ -96,7 +96,7 @@ namespace _2.zh_gyak
             }
         }
 
-        [PriceRange(200, 20000)]
+        [PriceRange(200, 20000)] // Bonusz3-hoz
         /// <remarks/>
         public int Price
         {
