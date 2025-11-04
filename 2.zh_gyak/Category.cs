@@ -96,6 +96,7 @@ namespace _2.zh_gyak
             }
         }
 
+        [PriceRange(200, 20000)]
         /// <remarks/>
         public int Price
         {

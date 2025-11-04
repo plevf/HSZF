@@ -27,6 +27,22 @@ namespace _2.zh_gyak
             return true;
         }
 
-        //TODO
+        public static bool IsWithinPriceRange(Product prod)
+        {
+            var type = prod.GetType();
+            foreach (var prop in type.GetProperties())
+            {
+                var attr = prop.GetCustomAttribute<PriceRangeAttribute>();
+                if (attr != null)
+                {
+                    var value = (int)prop.GetValue(prod);
+                    if(value < attr.MinPrice || value > attr.MaxPrice)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

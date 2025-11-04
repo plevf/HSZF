@@ -66,7 +66,21 @@ namespace _2.zh_gyak
                     Console.WriteLine($"\tTermék: {prod.Name} (Ár: {prod.Price})");
                 }
             }
+            Console.WriteLine();
             // ------------------------------
+
+            // Bonusz 3 kiiratasa
+
+            foreach (var cat in categories)
+            {
+                foreach (var prod in cat.Products)
+                {
+                    if (!Validator.IsWithinPriceRange(prod))
+                    {
+                        Console.WriteLine($"{prod.Name}'s price value is invalid! ({prod.Price})");
+                    }
+                }
+            }
         }
     }
 }
