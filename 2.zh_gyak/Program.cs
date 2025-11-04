@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Xml.Linq;
 
 namespace _2.zh_gyak
 {
@@ -33,31 +35,38 @@ namespace _2.zh_gyak
             }
 
             // JSON beolvasas
-            var categoriesJSON = new List<CategoryJ>();
 
-            XDocument xdocJ = XDocument.Load("Products.json");
-            foreach (var category in xdocJ.Descendants("Category"))
+            //List<CategoryJ> catergoryJs = JsonConvert.DeserializeObject<List<CategoryJ>>(File.ReadAllText("Products.json"));
+
+            // A beolvasott objektumotkat szűrd le, hogy csak a 10000-nél drágább termékeket szeretnénk ismerni és mentsd el őket az újonnan létrejövő adatbázisba.
+
+            var context = new PackageDbContext();
+
+            foreach (var category in categories)
             {
-                var productsJSON = category.Element("Products").Elements("Product");
-                var productsJ = new List<ProductJ>();
-
-                foreach (var product in productsJSON)
-                {
-                    productsJ.Add(new ProductJ
-                    {
-                        SkuJ = product.Element("Sku").Value,
-                        NameJ = product.Element("Name").Value,
-                        PriceJ = int.Parse(product.Element("Price").Value)
-                    });
-                }
-
-                categoriesJSON.Add(new CategoryJ
-                {
-                    NameJ = category.Element("Name").Value,
-                    ProductsJ = productsJ
-                });
+                category.Products = category.Products
+                    .Where(p => p.Price > 10000)
+                    .ToList();
             }
-            ;
+            
+            context.Categories.AddRange(categories); // itt kerul bele az adatbazisba
+            context.SaveChanges();
+
+            // Adatbazis kiiratasa ----------
+
+            var savedCategories = context.Categories
+                .Include(c => c.Products)
+                .ToList();
+
+            foreach (var cat in savedCategories)
+            {
+                Console.WriteLine($"\nKategória: {cat.Name}");
+                foreach (var prod in cat.Products)
+                {
+                    Console.WriteLine($"\tTermék: {prod.Name} (Ár: {prod.Price})");
+                }
+            }
+            // ------------------------------
         }
     }
 }

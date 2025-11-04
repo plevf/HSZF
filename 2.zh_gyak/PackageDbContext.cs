@@ -20,7 +20,8 @@ namespace _2.zh_gyak
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("ProductPackage");
+            optionsBuilder.UseInMemoryDatabase("Package");
+            
         }
 
         // memóriában futó adatbázist használunk, nem valódi fizikai DB-t - Ideális teszteléshez vagy prototípushoz, mert nem ír fájlba vagy SQL Server-be
