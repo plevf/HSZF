@@ -65,7 +65,6 @@ namespace _7.het_lab_3
             {
                 Console.WriteLine("JsonPropertyNameAttribute not found on Age property.");
             }
-
         }
 
         private static void BuiltInAttributes() // itt még privat tagokat is le lehet kerni

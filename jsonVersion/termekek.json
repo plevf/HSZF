@@ -1,0 +1,306 @@
+{
+  "ProductPackage": {
+    "Categories": [
+      {
+        "Name": "Coffee",
+        "Products": [
+          {
+            "Sku": "COF-1001",
+            "Name": "Premium Arabica",
+            "Price": 12990
+          },
+          {
+            "Sku": null,
+            "Name": "Extra Dark Roast",
+            "Price": 9990
+          }
+        ]
+      },
+      {
+        "Name": "Tea",
+        "Products": [
+          {
+            "Sku": "TEA-2001",
+            "Name": "Green Tea",
+            "Price": 14990
+          },
+          {
+            "Sku": "TEA-2002",
+            "Name": "Black Tea",
+            "Price": 8990
+          }
+        ]
+      },
+      {
+        "Name": "Chocolate",
+        "Products": [
+          {
+            "Sku": "CHO-3001",
+            "Name": "Dark Chocolate 85%",
+            "Price": 11990
+          },
+          {
+            "Sku": "CHO-3002",
+            "Name": "Milk Chocolate",
+            "Price": 4990
+          }
+        ]
+      },
+      {
+        "Name": "Biscuits",
+        "Products": [
+          {
+            "Sku": "BIS-4001",
+            "Name": "Butter Cookies",
+            "Price": 10990
+          },
+          {
+            "Sku": "BIS-4002",
+            "Name": "Chocolate Chip",
+            "Price": 9990
+          }
+        ]
+      },
+      {
+        "Name": "Juice",
+        "Products": [
+          {
+            "Sku": "JUI-5001",
+            "Name": "Orange Juice",
+            "Price": 6990
+          },
+          {
+            "Sku": "JUI-5002",
+            "Name": "Mango Juice",
+            "Price": 10990
+          }
+        ]
+      },
+      {
+        "Name": "Snacks",
+        "Products": [
+          {
+            "Sku": "SNA-6001",
+            "Name": "Potato Chips",
+            "Price": 4990
+          },
+          {
+            "Sku": "SNA-6002",
+            "Name": "Nachos Cheese",
+            "Price": 11990
+          }
+        ]
+      },
+      {
+        "Name": "Water",
+        "Products": [
+          {
+            "Sku": "WAT-7001",
+            "Name": "Mineral Water 0.5L",
+            "Price": 1990
+          },
+          {
+            "Sku": "WAT-7002",
+            "Name": "Mineral Water 1.5L",
+            "Price": 2490
+          }
+        ]
+      },
+      {
+        "Name": "Energy Drinks",
+        "Products": [
+          {
+            "Sku": "ENE-8001",
+            "Name": "Energy Boost",
+            "Price": 11990
+          },
+          {
+            "Sku": "ENE-8002",
+            "Name": "Zero Sugar Energy",
+            "Price": 10990
+          }
+        ]
+      },
+      {
+        "Name": "Beer",
+        "Products": [
+          {
+            "Sku": "BEE-9001",
+            "Name": "Lager Classic",
+            "Price": 5990
+          },
+          {
+            "Sku": null,
+            "Name": "Craft IPA",
+            "Price": 12990
+          }
+        ]
+      },
+      {
+        "Name": "Wine",
+        "Products": [
+          {
+            "Sku": "WIN-10001",
+            "Name": "Red Merlot",
+            "Price": 18990
+          },
+          {
+            "Sku": "WIN-10002",
+            "Name": "White Chardonnay",
+            "Price": 17990
+          }
+        ]
+      },
+      {
+        "Name": "Cheese",
+        "Products": [
+          {
+            "Sku": "CHE-11001",
+            "Name": "Gouda",
+            "Price": 8990
+          },
+          {
+            "Sku": "CHE-11002",
+            "Name": "Parmesan",
+            "Price": 13990
+          }
+        ]
+      },
+      {
+        "Name": "Meat",
+        "Products": [
+          {
+            "Sku": "MEA-12001",
+            "Name": "Beef Steak",
+            "Price": 25990
+          },
+          {
+            "Sku": "MEA-12002",
+            "Name": "Pork Sausage",
+            "Price": 9990
+          }
+        ]
+      },
+      {
+        "Name": "Fish",
+        "Products": [
+          {
+            "Sku": "FIS-13001",
+            "Name": "Salmon Fillet",
+            "Price": 18990
+          },
+          {
+            "Sku": "FIS-13002",
+            "Name": "Tuna Can",
+            "Price": 6990
+          }
+        ]
+      },
+      {
+        "Name": "Vegetables",
+        "Products": [
+          {
+            "Sku": "VEG-14001",
+            "Name": "Broccoli",
+            "Price": 4990
+          },
+          {
+            "Sku": "VEG-14002",
+            "Name": "Carrots",
+            "Price": 2990
+          }
+        ]
+      },
+      {
+        "Name": "Fruits",
+        "Products": [
+          {
+            "Sku": "FRU-15001",
+            "Name": "Bananas",
+            "Price": 3990
+          },
+          {
+            "Sku": "FRU-15002",
+            "Name": "Apples",
+            "Price": 4490
+          }
+        ]
+      },
+      {
+        "Name": "Dairy",
+        "Products": [
+          {
+            "Sku": null,
+            "Name": "Whole Milk",
+            "Price": 2590
+          },
+          {
+            "Sku": "DAI-16002",
+            "Name": "Yogurt",
+            "Price": 3290
+          }
+        ]
+      },
+      {
+        "Name": "Bread",
+        "Products": [
+          {
+            "Sku": "BRE-17001",
+            "Name": "Wholegrain Bread",
+            "Price": 6990
+          },
+          {
+            "Sku": "BRE-17002",
+            "Name": "White Toast",
+            "Price": 5990
+          }
+        ]
+      },
+      {
+        "Name": "Electronics",
+        "Products": [
+          {
+            "Sku": "ELE-18001",
+            "Name": "Wireless Headphones",
+            "Price": 29990
+          },
+          {
+            "Sku": "ELE-18002",
+            "Name": "Bluetooth Speaker",
+            "Price": 24990
+          }
+        ]
+      },
+      {
+        "Name": "Books",
+        "Products": [
+          {
+            "Sku": "BOO-19001",
+            "Name": "Programming in C#",
+            "Price": 15990
+          },
+          {
+            "Sku": "BOO-19002",
+            "Name": "History of AI",
+            "Price": 18990
+          }
+        ]
+      },
+      {
+        "Name": "Games",
+        "Products": [
+          {
+            "Sku": "GAM-20001",
+            "Name": "Chess Set",
+            "Price": 8990
+          },
+          {
+            "Sku": null,
+            "Name": "Video Game Controller",
+            "Price": 21990
+          }
+        ]
+      }
+    ]
+  }
+}
