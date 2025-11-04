@@ -42,5 +42,4 @@ namespace _2.zh_gyak
         public string NameJ { get; set; }
         public int PriceJ { get; set; }
     }
-
 }

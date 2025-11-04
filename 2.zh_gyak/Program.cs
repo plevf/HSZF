@@ -6,6 +6,8 @@ namespace _2.zh_gyak
     {
         static void Main(string[] args)
         {
+            // XML beolvasas
+
             var categories = new List<Category>();
 
             XDocument xdoc = new XDocument("termekek.xml");
@@ -25,11 +27,38 @@ namespace _2.zh_gyak
                 }
                 categories.Add(new Category
                 {
-                    Id = int.Parse(category.Element("Id").Value),
                     Name = category.Element("Name").Value,
                     Products = products
                 });
             }
+
+            // JSON beolvasas
+
+            var categoriesJSON = new List<CategoryJ>();
+
+            XDocument xdocJ = new XDocument("Products.json");
+            foreach (var category in xdocJ.Descendants("Category"))
+            {
+                var productsJSON = category.Element("Products").Elements("Product");
+                var productsJ = new List<ProductJ>();
+
+                foreach (var product in productsJSON)
+                {
+                    productsJ.Add(new ProductJ
+                    {
+                        SkuJ = product.Element("Sku").Value,
+                        NameJ = product.Element("Name").Value,
+                        PriceJ = int.Parse(product.Element("Price").Value)
+                    });
+                }
+
+                categoriesJSON.Add(new CategoryJ
+                {
+                    NameJ = category.Element("Name").Value,
+                    ProductsJ = productsJ
+                });
+            }
+            ;
         }
     }
 }
