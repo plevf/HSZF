@@ -9,8 +9,8 @@ namespace _2.zh_gyak
 {
     public class PackageDbContext : DbContext
     {
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories => Set<Category>(); // get set helyett
+        public DbSet<Product> Products => Set<Product>();
 
         public PackageDbContext()
         {

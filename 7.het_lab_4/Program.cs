@@ -65,7 +65,7 @@ namespace _7.het_lab_4
                 lukas.Books.Add(new Book { Title = "Spring Framework" });
                 adam.Books.Add(new Book { Title = "Python for Data Science" });
 
-                db.Authors.AddRange(john, jane, lukas, adam);
+                db.Authors.AddRange(john, jane, lukas, adam); // ez "adja hozza" az adatokat az adatbazishoz
                 db.SaveChanges(); // elmenti az adatokat az adatbazisba
             }
 

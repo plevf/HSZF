@@ -69,6 +69,12 @@ namespace _2.zh_gyak
             Console.WriteLine();
             // ------------------------------
 
+            // Bónusz2: JSON
+            var json = File.ReadAllText("products.json");
+            var categoryJs = JsonConvert.DeserializeObject<List<CategoryJ>>(json);
+
+
+
             // Bonusz 3 kiiratasa
 
             foreach (var cat in categories)
