@@ -21,9 +21,7 @@ namespace xmlVersion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=packagedb;Integrated Security=True;MultipleActiveResultSets=true";
-            object value = optionsBuilder.UseSqlServer(connStr);
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseInMemoryDatabase("Package");
         }
     }
 }
