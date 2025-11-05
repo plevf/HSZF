@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text.Json;
+using xmlVersion;
 
 namespace jsonVersion
 {
@@ -34,7 +35,11 @@ namespace jsonVersion
                     .Where(p => p.Price > 10000)
                     .ToList();
             }
+            
 
+            PackageDbContext db = new PackageDbContext();
+            db.Categories.AddRange(data.ProductPackage.Categories);
+            db.SaveChanges();
         }
     }
 
