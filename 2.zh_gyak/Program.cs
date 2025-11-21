@@ -109,7 +109,7 @@ namespace _2.zh_gyak
             string s = "";
             Console.WriteLine(s.Length);
             IEnumerable<string> strings = new List<string> { "apple", "banana", "kiwi" };
-            var lengths = strings.Lengths();
+            var lengths = strings.Lengths(); // nem adunk neki parametert, extension
             foreach (var length in lengths)
             {
                 Console.WriteLine(length);
@@ -121,12 +121,21 @@ namespace _2.zh_gyak
             {
                 Console.WriteLine(prop.Name);
             }
-
-}
+            var lengths2 = strings // valoban nem fut le a select, amig nem iteralunk rajta
+                .Select(s =>
+                {
+                    Console.WriteLine("Select fut: " + s);
+                    return s.Length;
+                });
+            foreach (var length in lengths2) // itt fut le a select
+            {
+                Console.WriteLine("Length: " + length);
+            }
+        }
     }
     public static class StringExtensions
     {
-        public static IEnumerable<int> Lengths(this IEnumerable<string> source)
+        public static IEnumerable<int> Lengths(this IEnumerable<string> source) // a this miatt extension method!!
         {
             return source.Select(s => s.Length);
         }
