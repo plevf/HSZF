@@ -89,6 +89,51 @@ namespace _2.zh_gyak
                     }
                 }
             }
+
+            // Eloadas zh tesztelgetes
+
+            var dbRes = context.Categories.Where(c => c.Name.StartsWith("E"));
+            var listRes = categories.Where(c => c.Name.StartsWith("E"));
+
+            Console.WriteLine(categories[3].GetType()); // peldanyon hivom meg, forditasi idoben adja meg a tipust
+            Console.WriteLine(typeof(Category)); // objektumon hivom meg, futasi idoben adja meg a tipust
+
+            /*
+            Az event egy multicast delegate-et használ.
+            Ez azt jelenti, hogy EGY eseményhez több metódus is feliratkozhat, és amikor az esemény bekövetkezik, minden feliratkozott metódus lefut, egymás után.
+             */
+
+            categories.Exists(c => c.Name == "Electronics");
+            categories.Except(savedCategories);
+            categories.Distinct();
+            string s = "";
+            Console.WriteLine(s.Length);
+            IEnumerable<string> strings = new List<string> { "apple", "banana", "kiwi" };
+            var lengths = strings.Lengths();
+            foreach (var length in lengths)
+            {
+                Console.WriteLine(length);
+            }
+
+            var type = typeof(Person);
+            var props = type.GetProperties();
+            foreach (var prop in props)
+            {
+                Console.WriteLine(prop.Name);
+            }
+
+}
+    }
+    public static class StringExtensions
+    {
+        public static IEnumerable<int> Lengths(this IEnumerable<string> source)
+        {
+            return source.Select(s => s.Length);
         }
+    }
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
