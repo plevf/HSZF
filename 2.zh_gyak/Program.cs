@@ -114,9 +114,14 @@ namespace _2.zh_gyak
             {
                 Console.WriteLine(length);
             }
-
-            var type = typeof(Person);
-            var props = type.GetProperties();
+            Console.WriteLine("-------------------------");
+            var c = new Category();
+            var type1 = c.GetType();
+            var type2 = typeof(Category);
+            var props = type2.GetProperties();
+            Console.WriteLine(c);
+            Console.WriteLine(type1);
+            Console.WriteLine(type2);
             foreach (var prop in props)
             {
                 Console.WriteLine(prop.Name);
