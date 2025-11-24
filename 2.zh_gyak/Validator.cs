@@ -18,7 +18,7 @@ namespace _2.zh_gyak
                 if (attr != null)
                 {
                     var propValue = (string)prop.GetValue(prod);
-                    if (string.IsNullOrEmpty(propValue)) // tehat ha a product skull prop-ja null vagy ures
+                    if (string.IsNullOrEmpty(propValue)) // tehat ha a product sku prop-ja null vagy ures
                     {
                         return false;
                     }

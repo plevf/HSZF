@@ -109,7 +109,7 @@ namespace _2.zh_gyak
             string s = "";
             Console.WriteLine(s.Length);
             IEnumerable<string> strings = new List<string> { "apple", "banana", "kiwi" };
-            var lengths = strings.Lengths(); // nem adunk neki parametert, extension
+            var lengths = strings.Lengths(); // nem adunk neki parametert, extension és itt még nem fut le
             foreach (var length in lengths)
             {
                 Console.WriteLine(length);
