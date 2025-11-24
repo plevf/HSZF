@@ -75,6 +75,7 @@ namespace _1.het_delegaltak
             Console.WriteLine(del(10, 20));
 
             List<double> results = new List<double>();
+            var t = del.GetInvocationList(); // Delegate[]
 
             foreach (var item in del.GetInvocationList())
             {
@@ -110,6 +111,8 @@ namespace _1.het_delegaltak
             {
                 return $"*** {item} ***";
             }
+            List<int> list = new List<int>() { 1, 2, 3, 4 };
+            list.FindAll(p => p > 1); // nem linq
 
             Storage<string> stringStorage = new Storage<string>(2);
             stringStorage.Add("Hello");

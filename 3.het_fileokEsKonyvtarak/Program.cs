@@ -3,10 +3,21 @@ using System.IO;
 
 namespace _3.het_fileokEsKonyvtarak
 {
+
     internal class Program
     {
         static void Main(string[] args)
         {
+            // nevtelen osztaly, AnonymousType
+            var peter = new
+
+            {
+
+                RealName = "Peter Paker",
+
+                HeroName = "Spider-Man"
+
+            };
             #region 1-3
             //DateTime creation = File.GetCreationTime("pp.png");
             //Console.WriteLine(creation);
@@ -166,6 +177,9 @@ namespace _3.het_fileokEsKonyvtarak
 
             string path = Path.Combine("C:", "Users", "porle", "Documents", "temp repos", "New York");
             ShowDirectory(path);
+            DirectoryInfo di = new DirectoryInfo(path);
+            var files = di.GetFiles(); // FileInfo[]
+            var directories = di.GetDirectories(); // DirectoryInfo[]
 
             static void ShowDirectory(string path, int level = 0)
             {
